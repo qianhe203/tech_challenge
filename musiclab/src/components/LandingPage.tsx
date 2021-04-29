@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
 
 function LandingPage() {
   return (
     <div className="App">
       <header className="App-header">
+          HOME
       </header>
     </div>
   );

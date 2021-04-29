@@ -2,9 +2,9 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "music-9"
+stack_name = "music-11"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-6gf4erx24riy"
-s3_prefix = "music-9"
+s3_prefix = "music-11"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
