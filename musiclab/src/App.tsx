@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import SongPage from "./components/SongPage"
-import { gql } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client/react';
 import styled from 'styled-components';
 
