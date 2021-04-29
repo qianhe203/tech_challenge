@@ -13,7 +13,9 @@ Submitted by Qian He
 `npm start`
 
 And that's it, the music-backend lambda is hosted on AWS for convenience -> https://cjvbui0tqi.execute-api.us-east-1.amazonaws.com/Prod/songs/
+
 The songData.json is stored in S3 -> https://musiclab-codechallenge.s3.amazonaws.com/songData.json
+
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
 Create a React application that shows a list of songs with their information and metrics displayed. The app should have at least **2 pages (views)**:
