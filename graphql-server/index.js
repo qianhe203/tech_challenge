@@ -36,78 +36,94 @@ const typeDefs = gql`
   # case, the "books" query returns an array of zero or more Books (defined above).
   type Query {
     songs: [Song]
+    orderBySong: [Song]
+    orderByArtist: [Song]
+    orderBySongReleaseDate: [Song]
+    orderByPlayCount: [Song]
+    metricA: [Song]
+    metricB: [Song]
+    metricC: [Song]
+    metricD: [Song]
+    metricE: [Song]
+    metricF: [Song]
+    metricG: [Song]
+    metricH: [Song]
+    metricI: [Song]
+    metricJ: [Song]
+    metricK: [Song]
+    metricL: [Song]
+    metricM: [Song]
+    metricN: [Song]
+    metricO: [Song]
+    metricP: [Song]
   }
 `;
 
-const data = [ {
-    "song": "ymI",
-    "artist": "ONE BABY",
-    "songReleaseDate": "01/01/2010",
-    "playCount": 44,
-    "metricA": 8,
-    "metricB": 86,
-    "metricC": 42,
-    "metricD": 96,
-    "metricE": 40,
-    "metricF": 83,
-    "metricG": 72,
-    "metricH": 38,
-    "metricI": 44,
-    "metricJ": 69,
-    "metricK": 52,
-    "metricL": 22,
-    "metricM": 81,
-    "metricN": 25,
-    "metricO": 96,
-    "metricP": 88
-  }, {
-    "song": "Rare",
-    "artist": "MANGO FRUIT",
-    "songReleaseDate": "01/01/1900",
-    "playCount": 1014,
-    "metricA": 53,
-    "metricB": 48,
-    "metricC": 15,
-    "metricD": 10,
-    "metricE": 82,
-    "metricF": 16,
-    "metricG": 84,
-    "metricH": 59,
-    "metricI": 98,
-    "metricJ": 61,
-    "metricK": 61,
-    "metricL": 68,
-    "metricM": 42,
-    "metricN": 20,
-    "metricO": 2,
-    "metricP": 66
-  },{
-    "song": "Raising Hex xBig Freedia",
-    "artist": "KESHA",
-    "songReleaseDate": "01/10/1100",
-    "playCount": 4167,
-    "metricA": 97,
-    "metricB": 50,
-    "metricC": 97,
-    "metricD": 36,
-    "metricE": 75,
-    "metricF": 94,
-    "metricG": 84,
-    "metricH": 9,
-    "metricI": 92,
-    "metricJ": 35,
-    "metricK": 51,
-    "metricL": 92,
-    "metricM": 28,
-    "metricN": 26,
-    "metricO": 26,
-    "metricP": 20
-  }];
 
 const resolvers = {
     Query: {
       songs: async (_source, __, { dataSources }) => {
         return dataSources.songsAPI.getSongs();
+      },
+      orderBySong: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.orderBySong();
+      },
+      orderByArtist: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.orderByArtist();
+      },
+      orderBySongReleaseDate: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.orderBySongReleaseDate();
+      },
+      orderByPlayCount: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.orderByPlayCount();
+      },
+      metricA: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricA();
+      },
+      metricB: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricB();
+      },
+      metricC: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricC();
+      },
+      metricD: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricD();
+      },
+      metricE: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricE();
+      },
+      metricF: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricF();
+      },
+      metricG: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricG();
+      },
+      metricH: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricH();
+      },
+      metricI: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricI();
+      },
+      metricJ: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricJ();
+      },
+      metricK: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricK();
+      },
+      metricL: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricL();
+      },
+      metricM: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricM();
+      },
+      metricN: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricN();
+      },
+      metricO: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricO();
+      },
+      metricP: async (_source, __, { dataSources }) => {
+        return dataSources.songsAPI.metricP();
       },
     },
   };
@@ -118,11 +134,6 @@ const server = new ApolloServer({
     dataSources: () => {
         return {
           songsAPI: new SongsAPI(),
-        };
-    },
-    context: () => {
-        return {
-          token: 'foo',
         };
     }
     });
