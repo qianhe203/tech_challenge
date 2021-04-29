@@ -9,32 +9,32 @@ Globals:
   Function:
     Timeout: 3
 Resources:
-  HelloWorldFunction:
+  SongFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: HelloWorldFunction
+      CodeUri: SongFunction
       Handler: app.lambdaHandler
       Runtime: nodejs14.x
       Events:
-        HelloWorld:
+        Songs:
           Type: Api
           Properties:
-            Path: /hello
+            Path: /songs
             Method: get
 Outputs:
-  HelloWorldApi:
-    Description: API Gateway endpoint URL for Prod stage for Hello World function
+  SongApi:
+    Description: API Gateway endpoint URL for Prod stage for songs api function
     Value:
-      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/
-  HelloWorldFunction:
-    Description: Hello World Lambda Function ARN
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/songs/
+  SongFunction:
+    Description: SongLambda Function ARN
     Value:
       Fn::GetAtt:
-      - HelloWorldFunction
+      - SongFunction
       - Arn
-  HelloWorldFunctionIamRole:
+  SongFunctionIamRole:
     Description: Implicit IAM Role created for Hello World function
     Value:
       Fn::GetAtt:
-      - HelloWorldFunctionRole
+      - SongFunctionRole
       - Arn

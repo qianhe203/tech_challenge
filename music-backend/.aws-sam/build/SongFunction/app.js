@@ -2,7 +2,6 @@ const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
 
 exports.lambdaHandler = async (event, context) => {
-    console.log("hello!!");
     const params = {
         Bucket: "musiclab-codechallenge",
         Key: "songData.json",
