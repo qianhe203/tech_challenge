@@ -11,40 +11,37 @@ import LandingPage from "./components/LandingPage";
 import SongPage from "./components/SongPage"
 import { gql } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client/react';
+import styled from 'styled-components';
+
 
 const client = new ApolloClient({
-  uri: 'https://48p1r2roz4.sse.codesandbox.io',
+  uri: 'http://localhost:4000/',
   cache: new InMemoryCache()
 });
 
+const NavItem = styled.div`
+text-align: center;
+font-weight: bold;
+width: 150px;
+height: 30px;
+background-color: #a4a5a8;
+color: black !important
+`;
+
+ 
+
 function App() {
-
-  
-client
-  .query({
-    query: gql`
-      query GetRates {
-        rates(currency: "USD") {
-          currency
-        }
-      }
-    `
-  })
-  .then(result => console.log(result));
-
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="/song">Songs</Link>
-              </li>
-            </ul>
+          <nav style={{display:"inline-flex"}}>
+              <NavItem>
+              <Link to="/home" style={{color:"black"}}>Home</Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/song" style={{color:"black"}}>Songs</Link>
+              </NavItem>
           </nav>
 
           <Switch>
@@ -52,7 +49,7 @@ client
               <LandingPage />
             </Route>
             <Route path="/song">
-              <SongPage />
+              <SongPage/>
             </Route>
           </Switch>
         </div>

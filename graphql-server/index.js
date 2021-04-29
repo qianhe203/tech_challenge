@@ -57,6 +57,28 @@ const typeDefs = gql`
     metricO: [Song]
     metricP: [Song]
   }
+  type Mutation {
+    orderBySong: [Song]
+    orderByArtist: [Song]
+    orderBySongReleaseDate: [Song]
+    orderByPlayCount: [Song]
+    metricA: [Song]
+    metricB: [Song]
+    metricC: [Song]
+    metricD: [Song]
+    metricE: [Song]
+    metricF: [Song]
+    metricG: [Song]
+    metricH: [Song]
+    metricI: [Song]
+    metricJ: [Song]
+    metricK: [Song]
+    metricL: [Song]
+    metricM: [Song]
+    metricN: [Song]
+    metricO: [Song]
+    metricP: [Song]
+  }
 `;
 
 
@@ -65,6 +87,8 @@ const resolvers = {
       songs: async (_source, __, { dataSources }) => {
         return dataSources.songsAPI.getSongs();
       },
+    },
+    Mutation: {
       orderBySong: async (_source, __, { dataSources }) => {
         return dataSources.songsAPI.orderBySong();
       },
@@ -125,7 +149,7 @@ const resolvers = {
       metricP: async (_source, __, { dataSources }) => {
         return dataSources.songsAPI.metricP();
       },
-    },
+    }
   };
 
 const server = new ApolloServer({ 
