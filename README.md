@@ -5,10 +5,16 @@ Submitted by Qian He
 ### To run locally -
 
 `cd /graphql-server`
+
 `node index.js`
+
 `cd ../musiclab`
+
 `npm start`
-And that's it, the backend lambda is hosted on AWS for convenience. 
+
+And that's it, the backend lambda is hosted on AWS for convenience.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 Create a React application that shows a list of songs with their information and metrics displayed. The app should have at least **2 pages (views)**:
 A landing page, and a page to show data coming from an API.
