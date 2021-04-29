@@ -35,12 +35,12 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <nav style={{display:"inline-flex"}}>
+          <nav className="nav-head">
               <NavItem>
-              <Link to="/home" style={{color:"black"}}>Home</Link>
+              <Link to="/home" className="nav-links">Home</Link>
               </NavItem>
               <NavItem>
-                <Link to="/song" style={{color:"black"}}>Songs</Link>
+                <Link to="/song" className="nav-links">Songs</Link>
               </NavItem>
           </nav>
 

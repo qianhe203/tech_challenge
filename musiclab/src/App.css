@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-head{
+  display: inline-flex;
+  background-color: #a4a5a8;
+  width: 165%;
+}
+
+.nav-links{
+  color: black;
+  vertical-align: sub;
+  text-decoration: none;
+}
+.nav-links:hover {
+  color: darkslategrey;
+}

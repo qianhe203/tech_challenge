@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import { useMutation, useLazyQuery, useQuery, gql } from '@apollo/client';
+import { useMutation, useQuery, gql } from '@apollo/client';
 import styled from 'styled-components';
 import TableCells from './TableCells';
 import { ISongProps } from '../resources/ISongProps';
 import {GET_SONGS, ORDER_SONGS, ORDER_ARTISTS, ORDER_DATE, ORDER_PLAY, ORDER_A, ORDER_B, ORDER_C, ORDER_D, ORDER_E, ORDER_F, ORDER_G, ORDER_H, ORDER_I, ORDER_J, ORDER_K, ORDER_L,ORDER_M,ORDER_N, ORDER_O, ORDER_P} from '../resources/constants'
-
-
 
 
 function SongPage() {
@@ -41,6 +39,7 @@ function SongPage() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
     console.log(songData)
+
     const TableHeader = styled.h1`
         font-size: 1.5em;
         text-align: center;
@@ -58,27 +57,28 @@ function SongPage() {
         display: table;
     `;
 
+    const HeadCell = styled.div`
+        display: table-cell;
+        padding: 10px;
+        border-bottom: 1px solid black;
+        cursor: pointer;
+        &:hover {
+            color: darkslategrey;
+          }
+    `; 
+
     const HeadRow = styled.div`
         display: table-header-group;
         background-color: gray;
         font-weight: bold;
     `;
 
-    const HeadCell = styled.div`
-        display: table-cell;
-        padding: 10px;
-        border-bottom: 1px solid black;
-        cursor: pointer;
-    `; 
-
     const TableBody = styled.div`
         display: table-row-group;
     `;
 
     const Row = styled.div`
-
         display: table-row;
-
     `;
 
     const Col = styled.div`
@@ -87,7 +87,6 @@ function SongPage() {
 
     `;
 
-    const Button = styled.button``;
   return (
     <div className="App">
       <Container>
@@ -161,8 +160,7 @@ function SongPage() {
                     metricB={song.metricB} metricC={song.metricC} metricD={song.metricD} metricE={song.metricE} metricF={song.metricF} metricG={song.metricG} 
                     metricH={song.metricH} metricI={song.metricI} metricJ={song.metricJ} metricK={song.metricK} metricL={song.metricL} metricM={song.metricM} metricN={song.metricN} metricO={song.metricO} metricP={song.metricP}>
                     </TableCells>
-                ))}
-                
+                ))}              
             </TableBody>
 
       </Container>

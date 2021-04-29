@@ -4,15 +4,12 @@ import { ISongProps } from '../resources/ISongProps';
 
 
 const Row = styled.div`
-
-display: table-row;
-
+    display: table-row;
 `;
 
 const Col = styled.div`
-display: table-cell;
-border:1px solid #343a40;
-
+    display: table-cell;
+    border:1px solid #343a40;
 `;
 const TableCells: FC<ISongProps> = ({ song, artist, songReleaseDate, playCount, metricA, metricB, metricC, metricD,
     metricE, metricF, metricG, metricH, metricI, metricJ, metricK, metricL, metricM, metricN, metricO, metricP }: ISongProps) => {
